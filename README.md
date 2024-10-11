@@ -17,3 +17,7 @@ Clone the project and run
 #LOGIN AND REGISTER
 
 You can register with you email and password or you can use you Google Account to register
+
+#Link
+
+[Netflix Clone](https://netflix-clone-six-mauve.vercel.app/)
