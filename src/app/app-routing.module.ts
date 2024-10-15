@@ -7,6 +7,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { canActivate, redirectUnauthorizedTo  } from '@angular/fire/auth-guard';
 
+/**
+ * El arreglo `routes` define las rutas de la aplicación.
+ * Implementar lazy loading en el componente home para mejorar la experiencia de usario usando loadChildren
+ */
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

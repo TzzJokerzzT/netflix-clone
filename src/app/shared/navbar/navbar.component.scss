@@ -1,7 +1,7 @@
 $color_1: red;
 $color_2: #fff;
 $color_3: white;
-$color_4: #ee0808;
+$color_4: #140202;
 
 .navbar-brand {
   color: $color_1;
@@ -16,8 +16,9 @@ $color_4: #ee0808;
   font-size: 18px;
   font-weight: 700;
 }
+
 .nav-link.active {
-  color: $color_2;
+  color: $color_1;
   &:hover,
   :focus {
     color: $color_4;
@@ -47,11 +48,13 @@ $color_4: #ee0808;
 
   ul.navbar-nav {
     li.nav-item {
-        width: 118px !important;
-        margin-left: 0 !important;
-        margin-bottom: 10px;
-      }
-    .nav-link, button {
+      width: 118px !important;
+      margin-left: 0 !important;
+      margin-bottom: 10px;
+    }
+    .nav-link,
+    .link-home,
+    button {
       width: 98px;
     }
     button {

@@ -8,10 +8,9 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   trendingMoviesResults?: Movie[] = [];
   discoverMoviesResults?: Movie[] = [];
   actionMovieResults?: Movie[] = [];
@@ -22,9 +21,19 @@ export class HomeComponent implements OnInit {
   sciencefictionMovieResults?: Movie[] = [];
   thrillerMovieResults?: Movie[] = [];
 
-  constructor (private moviesService: MoviesService, private userService: UserService, private title: Title, private meta: Meta, private router: Router) { }
+  /**
+   *Refactorizar Solicitudes de Películas en un Método Genérico, ya que las funciones para obtener películas son casi idénticas
+   *Eliminar los console log
+   */
+  constructor(
+    private moviesService: MoviesService,
+    private userService: UserService,
+    private title: Title,
+    private meta: Meta,
+    private router: Router
+  ) {}
 
-  ngOnInit (): void {
+  ngOnInit(): void {
     this.trendingMovies();
     this.discoverMovies();
     this.actionMovies();
@@ -36,57 +45,57 @@ export class HomeComponent implements OnInit {
     this.thrillerMovies();
   }
 
-  trendingMovies () {
+  trendingMovies() {
     this.moviesService.getTrendingMovies().subscribe((result) => {
       console.log(result, 'trendingresult#');
       this.trendingMoviesResults = result.results;
     });
   }
 
-  discoverMovies () {
+  discoverMovies() {
     this.moviesService.getDiscoverMovies().subscribe((result) => {
       console.log(result, 'discoverresult#');
       this.discoverMoviesResults = result.results;
     });
   }
 
-  actionMovies () {
+  actionMovies() {
     this.moviesService.getActionMovies().subscribe((result) => {
       this.actionMovieResults = result.results;
     });
   }
 
-  adventureMovies () {
+  adventureMovies() {
     this.moviesService.getAdventureMovies().subscribe((result) => {
       this.adventureMovieResults = result.results;
     });
   }
 
-  animationMovies () {
+  animationMovies() {
     this.moviesService.getAnimationMovies().subscribe((result) => {
       this.animationMovieResults = result.results;
     });
   }
 
-  comedyMovies () {
+  comedyMovies() {
     this.moviesService.getComedyMovies().subscribe((result) => {
       this.comedyMovieResults = result.results;
     });
   }
 
-  documentaryMovies () {
+  documentaryMovies() {
     this.moviesService.getDocumentaries().subscribe((result) => {
       this.documentaryMovieResults = result.results;
     });
   }
 
-  sciencefictionMovies () {
+  sciencefictionMovies() {
     this.moviesService.getScienceFictionMovies().subscribe((result) => {
       this.sciencefictionMovieResults = result.results;
     });
   }
 
-  thrillerMovies () {
+  thrillerMovies() {
     this.moviesService.getThrillerMovies().subscribe((result) => {
       this.thrillerMovieResults = result.results;
     });
